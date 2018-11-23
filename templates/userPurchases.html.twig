@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Fly Away!</title>
+        <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
+        <link rel="stylesheet" href="css/w3.css">
+    </head>
+    <body>
+        {% include 'topNavbar.html.twig' %}
+        <div class="container" style="max-width: 55%;">
+            <h1 class="well">Compras de {{ usuario }}</h1>
+            {% if compras != null %}
+                <div class="panel panel-default">
+                    <table class="table">
+                        <tr>
+                            <td align="center"><strong>Fecha</strong></td>
+                            <td align="center"><strong>Total</strong></td>
+                            <td align="center"></td>
+                        </tr>
+                        {% for compra in compras %}
+                        <tr>
+                            <td align="center">{{ compra.getFecha }}</td>
+                            <td align="center">${{ compra.getTotal }}</td>
+                            <td align="center"><a style="text-decoration: none;" href="./?action=userPurchasesDetail&compraId={{compra.getId}}">Ver detalle <i class="glyphicon glyphicon-eye-open"></i></a></td>
+                        </tr>
+                        {% endfor %}
+                    </table>
+                </div>
+                {% else %}
+                <div class="alert alert-warning" role="alert"><strong>Oops!</strong> Este usuario aún no ha realizado compras en el sistema.</div>
+                {% endif %}
+            <div align="center">
+                <button class="btn btn-primary navbar-btn" onClick="window.location.href='javascript:history.back(-1);'">Volver</button>
+            </div>  
+        </div>
+    </body>
+</html>

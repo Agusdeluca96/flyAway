@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Fly Away!</title>
+        <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
+        <link rel="stylesheet" href="css/w3.css">
+        <link href="css/fileinput.css" media="all" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        {% include 'topNavbar.html.twig' %}
+        <div class="container" style="margin-left: 22%">
+            <h1 class="col-lg-8 well">Buscar Vuelo</h1>
+            <div class="col-lg-8 well">
+                <div class="row">
+                    <form name="form" method="post" action="index.php?action=flightsList" enctype="multipart/form-data">
+                        <div class="col-sm-12">
+                            <div class="row">
+                                <div class="col-sm-4 form-group">
+                                    <label>Fecha de partida</label>
+                                    <input type="date" class="form-control" name="fechaPartida" required="true">
+                                </div>
+                                <div class="col-sm-4 form-group">
+                                    <dl class="form-group">
+                                        <dt><label>Origen</label></dt>
+                                        <dd>
+                                            <input name="ciudadOrigen" id="ciudadOrigen" type="text" placeholder="Ciudad" class="form-control" required="true">    
+                                        </dd>
+                                        <dd style="margin-top: 3%">
+                                            <input name="paisOrigen" id="paisOrigen" type="text" placeholder="Pais" class="form-control" required="true">    
+                                        </dd>
+                                    </dl>
+                                </div>
+                                <div class="col-sm-4 form-group">
+                                    <dl class="form-group">
+                                        <dt><label>Destino</label></dt>
+                                        <dd>
+                                            <input name="ciudadDestino" id="ciudadDestino" type="text" placeholder="Ciudad" class="form-control" required="true">    
+                                        </dd>
+                                        <dd style="margin-top: 3%">
+                                            <input name="paisDestino" id="paisDestino" type="text" placeholder="Pais" class="form-control" required="true">    
+                                        </dd>
+                                    </dl>
+                                </div>
+                            </div>                 
+                            <div align="center">
+                                <button type="submit" class="btn btn-primary navbar-btn">Buscar</button>
+                                <button type="reset" class="btn btn-default navbar-btn">Restablecer</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

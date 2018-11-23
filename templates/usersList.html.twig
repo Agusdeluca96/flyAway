@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Fly Away!</title>
+        <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
+        <link rel="stylesheet" href="css/w3.css">
+    </head>
+    <body>
+        {% include 'topNavbar.html.twig' %}
+        <div class="container">
+            <h1 class="well">Listado de Usuarios</h1>
+            <div class="panel panel-default">
+                <table class="table">
+                    <tr>
+                        <td align="center"><strong>Usuario</strong></td>
+                        <td align="center"><strong>Nombre</strong></td>
+                        <td align="center"><strong>Apellido</strong></td>
+                        <td align="center"><strong>Email</strong></td>
+                        <td align="center"></td>
+                        <td align="center"></td>
+                    </tr>
+                    {% for user in usuarios %}
+                    <tr>
+                        <td align="center">{{ user.getUsuario }}</td>
+                        <td align="center">{{ user.getNombre }}</td>
+                        <td align="center">{{ user.getApellido }}</td>
+                        <td align="center">{{ user.getEmail }}</td>
+                        <td align="center"><a style="text-decoration: none;" href="./?action=userPurchasesById&userId={{user.getId}}&username={{user.getUsuario}}">Ver compras <i class="glyphicon glyphicon-shopping-cart"></i></a></td>
+                        <td align="center"><a style="text-decoration: none;" href="./?action=userRemove&userId={{user.getId}}">Eliminar <i class="glyphicon glyphicon-trash"></i></a></td>
+                    </tr>
+                    {% endfor %}
+                </table>
+            </div>
+            <div align="center">
+                <button class="btn btn-primary navbar-btn" onClick="window.location.href='javascript:history.back(-1);'">Volver</button>
+            </div>  
+        </div>
+    </body>
+</html>
