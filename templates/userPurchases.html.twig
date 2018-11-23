@@ -12,7 +12,7 @@
         {% include 'topNavbar.html.twig' %}
         <div class="container" style="max-width: 55%;">
             <h1 class="well">Compras de {{ usuario }}</h1>
-            {% if compras != null %}
+            {% if compras %}
                 <div class="panel panel-default">
                     <table class="table">
                         <tr>
@@ -30,7 +30,7 @@
                     </table>
                 </div>
                 {% else %}
-                <div class="alert alert-warning" role="alert"><strong>Oops!</strong> Este usuario aún no ha realizado compras en el sistema.</div>
+                <div class="alert alert-warning" role="alert"><strong>Oops!</strong> Aún no has realizado compras en el sistema.</div>
                 {% endif %}
             <div align="center">
                 <button class="btn btn-primary navbar-btn" onClick="window.location.href='javascript:history.back(-1);'">Volver</button>

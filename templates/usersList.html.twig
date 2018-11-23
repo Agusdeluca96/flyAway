@@ -12,6 +12,7 @@
         {% include 'topNavbar.html.twig' %}
         <div class="container">
             <h1 class="well">Listado de Usuarios</h1>
+            {% if usuarios %}
             <div class="panel panel-default">
                 <table class="table">
                     <tr>
@@ -34,6 +35,9 @@
                     {% endfor %}
                 </table>
             </div>
+            {% else %}
+            <div class="alert alert-warning" role="alert"><strong>Oops!</strong> No hay usuarios registrados en el sistema.</div>
+            {% endif %}
             <div align="center">
                 <button class="btn btn-primary navbar-btn" onClick="window.location.href='javascript:history.back(-1);'">Volver</button>
             </div>  

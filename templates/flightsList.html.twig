@@ -12,6 +12,7 @@
         {% include 'topNavbar.html.twig' %}
         <div class="container">
             <h1 class="well">Listado de Vuelos</h1>
+            {% if flights %}
             <div class="panel panel-default">
                 <table class="table">
                     <tr>
@@ -36,6 +37,9 @@
                     {% endfor %}
                 </table>
             </div>
+            {% else %}
+            <div class="alert alert-warning" role="alert"><strong>Oops!</strong> No se han encontrado vuelos con los filtros ingresados.</div>
+            {% endif %}
             <div align="center">
                 <button class="btn btn-primary navbar-btn" onClick="window.location.href='javascript:history.back(-1);'">Volver</button>
             </div>  
