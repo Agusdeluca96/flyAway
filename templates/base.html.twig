@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Fly Away!</title>
+        {% block stylesheets %}
+            <!-- CSS de Bootstrap -->
+            <link href="assets/css/bootstrap.min.css" rel="stylesheet" media="screen">
+            <link href="assets/css/w3.css" rel="stylesheet">
+            <link href="assets/css/fileinput.css" media="all" rel="stylesheet" type="text/css" />    
+        {% endblock %}
+    </head>
+
+    {% block body %}
+        <body>
+            {% include 'topNavbar.html.twig' %}
+            {% block main %}{% endblock %}
+            {% block javascripts %}
+                <script src="assets/js/justNumbers.js"></script>
+                    <script src="assets/js/jquery.js"></script>
+                    <script src="assets/js/bootstrap.min.js"></script>
+                    <script src="assets/js/fileinput.js" type="text/javascript"></script>
+                    <script src="assets/js/fileinput_locale_fr.js" type="text/javascript"></script>
+                    <script src="assets/js/fileinput_locale_es.js" type="text/javascript"></script>
+            {% endblock %}
+        </body>
+    {% endblock %}
+</html>
